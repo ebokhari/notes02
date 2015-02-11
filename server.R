@@ -8,7 +8,8 @@ shinyServer(
      function(input, output) {    
           
           # read in sat dataset
-          gpa = read.csv('sat.csv')
+          gpa = read.table('http://onlinestatbook.com/2/case_studies/data/sat.txt',
+                 header = T)
           gpa$total_SAT = gpa$math_SAT + gpa$verb_SAT
           
           # explanatory variable 
